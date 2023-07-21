@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cardiovascular Heart Disease Prediction</title>
+</head>
+<body>
+    <h1>Cardiovascular Heart Disease Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="General_Health">General_Health:</label>
+        <select id="General_Health" name="General_Health">
+            <option value= 0> Excellent</option>
+            <option value= 1>Fair</option>
+            <option value= 2>Good</option>
+            <option value= 3>Poor</option>
+            <option value= 4>Very Good</option>
+        </select>
+
+        <label for="Checkup">Checkup:</label>
+        <select id="Checkup" name="Checkup">
+            <option value= 0> 5 or more years ago</option>
+            <option value= 1>Never</option>
+            <option value= 2>Within the past 2 years</option>
+            <option value= 3>Within the past 5 years</option>
+            <option value= 4>Within the past year</option>
+        </select>
+
+        <label for="Exercise">Exercise:</label>
+        <select id="Exercise" name="Exercise">
+            <option value= 0>No</option>
+            <option value= 1>Yes</option>
+        </select>
+
+        <label for="Skin_Cancer">Skin_Cancer:</label>
+        <select id="Skin_Cancer" name="Skin_Cancer">
+            <option value= 0>No</option>
+            <option value= 1>Yes</option>
+        </select>   
+        
+        <label for="Other_Cancerr">Other_Cancer:</label>
+        <select id="Other_Cancer" name="Other_Cancer">
+            <option value= 0>No</option>
+            <option value= 1>Yes</option>
+        </select>
+        
+        <label for="Depression">Depression:</label>
+        <select id="Depression" name="Depression">
+            <option value= 0>No</option>
+            <option value= 1>Yes</option>
+        </select>
+
+        <label for="Arthritis">Arthritis:</label>
+        <select id="Arthritis" name="Arthritis">
+            <option value= 0>No</option>
+            <option value= 1>Yes</option>
+        </select>
+
+        <label for="Smoking_History">Smoking_History:</label>
+        <select id="Smoking_History" name="Smoking_History">
+            <option value= 0>No</option>
+            <option value= 1>Yes</option>
+        </select>
+
+        <label for="Diabetes">Diabetes:</label>
+        <select id="Diabetes" name="Diabetes">
+            <option value= 0>No</option>
+            <option value= 1>No, pre-diabetes or borderline diabetes</option>
+            <option value= 2>Yes</option>
+            <option value= 3>Yes, but female told only during pregnancy</option>
+        </select>
+
+        <label for="Age_Category">Age_Category:</label>
+        <select id="Age_Category" name="Age_Category">
+            <option value= 0>18-24</option>
+            <option value= 1>25-29</option>
+            <option value= 2>30-34</option>
+            <option value= 3>35-39</option>
+            <option value= 4>40-44</option>
+            <option value= 5>45-49</option>
+            <option value= 6>50-54</option>
+            <option value= 7>55-59</option>
+            <option value= 8>60-64</option>
+            <option value= 9>65-69</option>
+            <option value= 10>70-74</option>
+            <option value= 11>75-79</option>
+            <option value= 12>80+</option>
+        </select>
+
+        <label for="Height_(cm)">Height_(cm):</label>
+        <input type="number" name="Height_(cm)" required><br>
+
+        <label for="Weight_(kg)">Weight_(kg):</label>
+        <input type="number" name="Weight_(kg)" required><br>
+
+        <label for="BMI">BMI:</label>
+        <input type="BMI" name="BMI" required><br>
+
+        <label for="Alcohol_Consumption">Alcohol_Consumption:</label>
+        <input type="number" name="Alcohol_Consumption" required><br>
+
+        <label for="Fruit_Consumption">Fruit_Consumption:</label>
+        <input type="number" name="Fruit_Consumption" required><br>
+
+        <label for="Green_Vegetables_Consumption">Green_Vegetables_Consumption:</label>
+        <input type="number" name="Green_Vegetables_Consumption" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_result %}
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction_result }}</p>
+    {% endif %}
+</body>
+</html>
